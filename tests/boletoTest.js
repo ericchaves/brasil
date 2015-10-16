@@ -15,13 +15,18 @@ module.exports = {
 
     bancos: {
         'Todos os bancos estão disponíveis': function(test) {
+            console.log('TRACE:', bancos);
+            
             test.ok(new bancos.Itau());
             test.ok(new bancos['341']());
 
             test.ok(new bancos.Caixa());
             test.ok(new bancos['104']());
 
-            test.equals(4, Object.keys(bancos).length);
+            test.ok(new bancos.Pan());
+            test.ok(new bancos['623']());
+
+            test.equals(6, Object.keys(bancos).length);
             test.done();
         },
     },
